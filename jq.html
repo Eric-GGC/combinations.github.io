@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- 
+  <style>
+    .load-animate {
+      animation: loading 1s 0s infinite;
+      visibility: visible;
+    }
+
+    @keyframes loading {
+      0% {
+        transform: translateY(100%);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+  </style> -->
+
+  <style>
+    .load-animate {
+      animation: loading 1s 0s infinite normal forwards;
+      visibility: visible;
+    }
+
+    @keyframes loading {
+      0% {
+        font-size: 14px;
+        /* 		transform: translateY(-30%); */
+      }
+
+      100% {
+        font-size: 18px;
+        /* 		transform: translateY(0%); */
+      }
+    }
+  </style>
+
+  <style>
+    .highlightwords {
+      /* 	background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 50%, #ffea9b 0); */
+      /* 	background-image: linear-gradient(90deg, white 20%, yellow 80%, gold); */
+      background-image: linear-gradient(90deg, white 50%, yellow 50%, red);
+      background-position: 0%;
+      background-size: 200%;
+      font-weight: 400;
+    }
+
+    .highlighted {
+      background-position: -100%;
+      transition: all 2s;
+    }
+  </style>
+
+  <style>
+    .goinguppic {
+      width: 100%;
+      visibility: hidden;
+    }
+
+    .sliding {
+      animation-name: sliding;
+      animation-duration: 2s;
+      visibility: visible;
+    }
+
+    @keyframes sliding {
+      0% {
+        opacity: 0;
+        transform: translateY(70%);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+    }
+  </style>
+
+  <title>Special Assignment</title>
+</head>
+
+<body>
+
+  <div style="height:100vh;background-color:gray">
+  </div>
+
+  <div style="height:100vh;background-color:royalblue">
+    <div class="text-center movingload"
+      style="height:100px;width:100px;position:relative;top:50vh;left:50vw;color:white">
+      <p>LOADING...</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <p>
+          Hi everybody.
+          This week I'm proud to join the students, teachers, businesses and non-profit organizations taking big new
+          steps to support computer science in America's schools.
+
+          Learning these skills isn't just important for your future, it's important for our country's future.
+
+          If we want America to stay on the cutting edge, we need young Americans, like you, to master the tools and
+          technology that will change the way we do just about everything.
+
+          That's why I'm asking you to get involved.
+
+          <span class="highlightwords">Don't just buy a new video game, make one.</span>
+          <span class="highlightwords">
+            Don't just download the latest app, help design it.</span>
+          <span class="highlightwords">
+            Don't just play on your phone, program it.</span>
+
+          No one's born a computer scientist, but with a little hard work, and some math and science, just about anyone
+          can become one.
+
+          This week is your chance to give it a shot.
+          <span class="highlightwords">And don't let anyone tell you "you can't."</span>
+
+          Whether you're a young man or a young woman, whether you live in a city or a rural area, computers are going
+          to be a big part of your future.
+
+          And if you're willing to work and study hard, that future is yours to shape.
+
+          Thanks everybody!
+
+        </p>
+      </div>
+      <div class="col-3"></div>
+    </div>
+  </div>
+
+  <div>
+    <img class="goinguppic" src="https://p4css.github.io/webScroll/assets/taipei-1.jpg" />
+    <img class="goinguppic" src="https://p4css.github.io/webScroll/assets/taipei-2.jpg" />
+    <img class="goinguppic" src="https://p4css.github.io/webScroll/assets/taipei-3.jpg" />
+    <img class="goinguppic" src="https://p4css.github.io/webScroll/assets/taipei-4.jpg" />
+  </div>
+
+  <div style="height:100vh;background-color:gray"></div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+
+  <script>
+    $(function () {
+      var windowh = $(window).height();
+      $(window).scroll(function () {
+        $(".movingload").each(function () {
+          var move = $(window).scrollTop();
+          var objectpos = $(this).offset().top;
+          if (move > objectpos - windowh / 2) {
+            $(this).addClass("load-animate")
+          }
+        });
+      });
+    });
+  </script>
+
+  <script>
+    $(function () {
+      var winheight = $(window).height();
+      $(window).scroll(function () {
+        $(".highlightwords").each(function () {
+          var current_pos = $(document).scrollTop();
+          if (current_pos > $(this).offset().top - winheight / 2) {
+            $(this).addClass("highlighted");
+          }
+        });
+      });
+    });
+  </script>
+
+  <script>
+    $(function () {
+      var winh = $(window).height();
+      $(window).scroll(function () {
+        $(".goinguppic").each(function () {
+          var scrolled = $(window).scrollTop();
+          var objpos = $(this).offset().top;
+          if (objpos < scrolled + winh * 0.5) {
+            $(this).addClass("sliding");
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>
